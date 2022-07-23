@@ -1,3 +1,3 @@
 ### Yogiyo Crawler
 
-자신의 크롬브라우저의 버전에 맞는 크롬드라이버를 설치하여 폴더 안에 넣어야 합니다.
+You need to install the Chrome driver that matches your version of Chrome browser and put it in this folder.
