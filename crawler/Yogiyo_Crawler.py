@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 from selenium import webdriver
 
@@ -5,6 +6,24 @@ import time
 
 from tqdm import tqdm
 from tqdm import trange
+
+###################################################################################################
+
+### Check if selenium exists ###
+try :
+    from selenium import webdriver
+except (ImportError, ModuleNotFoundError) :
+    print("Selenium isn't installed.")
+    print("Selenium will be installed.")
+    import subprocess
+    if(float(sys.version[:3]) >= 3.5 ) :
+        subprocess.run([sys.executable, '-m', 'pip', 'install', 'selenium'])
+    else :
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'selenium'])
+finally :
+    from selenium import webdriver
+
+###################################################################################################
 
 # Put the chromedriver.exe for your version of Chrome browser in this folder.
 driver = webdriver.Chrome("./crawler/chromedriver.exe")
